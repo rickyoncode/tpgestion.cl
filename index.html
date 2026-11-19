@@ -1,0 +1,1451 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Tatiana Pérez Cáceres</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap">
+
+<style>
+/* Layout: una columna, bandas alternadas de azul tinta / blanco / niebla.
+   El coral aparece una vez por banda: el botón o el dato que importa. */
+:root {
+  --bg:        #FFFFFF;
+  --surface:   #F4F6F9;
+  --line:      #E4E7EC;
+  --fg:        #2A3342;
+  --muted:     #6A7487;
+  --deep:      #16233A;
+  --deep-2:    #0E1727;
+  --mid:       #44536E;
+  --accent:    #FF5A3C;
+  --accent-tx: #D93A1A;
+  --on-deep:   #FFFFFF;
+  --on-deep-m: #AFB9CA;
+  --card:      #FFFFFF;
+
+  --seg1: #D7DCE4; --seg1-fg: #16233A;
+  --seg2: #44536E; --seg2-fg: #FFFFFF;
+  --seg3: #16233A; --seg3-fg: #FFFFFF;
+  --seg4: #D93A1A; --seg4-fg: #FFFFFF;
+  --seg5: #FF5A3C; --seg5-fg: #16233A;
+
+  --serif: 'Source Serif 4', Cambria, Georgia, 'Times New Roman', serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --s1: .78rem; --s2: .875rem; --s3: 1rem; --s4: 1.125rem;
+  --h3: clamp(1.3rem, 2.4vw, 1.6rem);
+  --h2: clamp(1.75rem, 4vw, 2.6rem);
+  --h1: clamp(2.1rem, 5.6vw, 3.6rem);
+  --r: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #0B1322;
+    --surface:   #121D32;
+    --line:      #26334A;
+    --fg:        #E6EAF1;
+    --muted:     #9BA6B8;
+    --deep:      #1A2740;
+    --deep-2:    #0E1727;
+    --mid:       #5B6B88;
+    --accent:    #FF5A3C;
+    --accent-tx: #FF8266;
+    --on-deep:   #FFFFFF;
+    --on-deep-m: #AFB9CA;
+    --card:      #121D32;
+    --seg1: #39455E; --seg1-fg: #E6EAF1;
+    --seg2: #55658A; --seg2-fg: #FFFFFF;
+    --seg3: #7D90B4; --seg3-fg: #0B1322;
+    --seg4: #D93A1A; --seg4-fg: #FFFFFF;
+    --seg5: #FF5A3C; --seg5-fg: #16233A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:        #0B1322;
+  --surface:   #121D32;
+  --line:      #26334A;
+  --fg:        #E6EAF1;
+  --muted:     #9BA6B8;
+  --deep:      #1A2740;
+  --deep-2:    #0E1727;
+  --mid:       #5B6B88;
+  --accent:    #FF5A3C;
+  --accent-tx: #FF8266;
+  --on-deep:   #FFFFFF;
+  --on-deep-m: #AFB9CA;
+  --card:      #121D32;
+  --seg1: #39455E; --seg1-fg: #E6EAF1;
+  --seg2: #55658A; --seg2-fg: #FFFFFF;
+  --seg3: #7D90B4; --seg3-fg: #0B1322;
+  --seg4: #D93A1A; --seg4-fg: #FFFFFF;
+  --seg5: #FF5A3C; --seg5-fg: #16233A;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+/* Que la barra fija no tape el título al saltar desde el menú. */
+section[id] { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 78px); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10;
+  background: var(--deep);
+}
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; text-wrap: balance; margin: 0; line-height: 1.12; }
+p { margin: 0; }
+a { color: var(--accent-tx); }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+section > .wrap { padding-block: clamp(56px, 8vw, 96px); }
+.band-deep { background: var(--deep); color: var(--on-deep); }
+.band-soft { background: var(--surface); }
+.prose { max-width: 62ch; }
+
+.eyebrow {
+  font-size: var(--s1); font-weight: 700; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--accent-tx); margin: 0 0 14px;
+}
+.band-deep .eyebrow { color: var(--accent); }
+.lede { color: var(--muted); font-size: var(--s4); margin-top: 16px; }
+.band-deep .lede { color: var(--on-deep-m); }
+
+/* ---------- nav ---------- */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--deep); color: var(--on-deep);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.nav .wrap {
+  display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  padding-block: 12px;
+}
+.brand { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--on-deep); text-decoration: none; }
+.nav nav { display: flex; gap: 20px; flex-wrap: wrap; margin-left: auto; align-items: center; }
+.nav nav a { color: var(--on-deep-m); text-decoration: none; font-size: var(--s2); }
+.nav nav a:hover { color: var(--on-deep); }
+
+.btn {
+  display: inline-block; background: var(--accent); color: #16233A;
+  font-family: var(--sans); font-weight: 700; font-size: var(--s2);
+  padding: 11px 20px; border-radius: var(--r); text-decoration: none;
+  border: 2px solid transparent;
+}
+.btn:hover { background: #ED4A2C; }
+.btn-ghost {
+  background: transparent; color: var(--on-deep);
+  border: 2px solid rgba(255,255,255,.35);
+}
+.btn-ghost:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.6); }
+:where(a, button, summary):focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- hero ---------- */
+.hero .wrap { padding-block: clamp(52px, 8vw, 92px); }
+.hero-grid { display: flex; flex-wrap: wrap; gap: 44px; align-items: flex-start; }
+.hero-main { flex: 999 1 420px; min-width: 0; }
+.hero h1 { font-size: var(--h1); }
+.hero .lede { max-width: 48ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+.price-card {
+  flex: 1 1 250px; min-width: 0;
+  background: var(--on-deep); color: #2A3342;
+  border-radius: var(--r); padding: 26px 28px;
+}
+.price-card .k { font-size: var(--s1); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #6A7487; }
+.price-card .n { font-family: var(--serif); font-size: 2.8rem; font-weight: 700; color: var(--accent-tx); line-height: 1; margin-top: 8px; }
+.price-card .u { color: #6A7487; font-size: var(--s2); margin-top: 6px; }
+.price-card hr { border: 0; border-top: 1px solid #E4E7EC; margin: 18px 0; }
+.price-card .f { font-size: var(--s2); color: #2A3342; }
+
+.hero-id { display: flex; align-items: center; gap: 14px; margin-top: 28px; }
+.hero-id img { width: 66px; height: 66px; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid rgba(255,255,255,.28); }
+.hero-id .who { min-width: 0; }
+.hero-id b { display: block; font-size: var(--s3); font-weight: 600; }
+.hero-id i { display: block; font-style: normal; font-size: var(--s2); color: var(--on-deep-m); margin-top: 3px; }
+.plink { display: inline-block; margin-top: 16px; font-size: var(--s2); font-weight: 600; color: var(--accent-tx); text-decoration: none; }
+.plink:hover { text-decoration: underline; }
+.destacado-quote {
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  margin-top: 34px; padding: 20px 24px;
+  background: var(--surface); border: 1px solid var(--line);
+  border-left: 4px solid var(--accent); border-radius: var(--r);
+}
+.destacado-quote img { width: 58px; height: 58px; border-radius: 50%; object-fit: cover; flex: none; }
+.destacado-quote p { flex: 999 1 300px; min-width: 0; font-size: var(--s4); line-height: 1.5; }
+.destacado-quote cite { display: block; font-style: normal; font-size: var(--s2); color: var(--muted); margin-top: 7px; }
+.logos-band .wrap { padding-block: 30px; }
+.logos-k { font-size: var(--s1); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: center; }
+.logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 18px; margin-top: 18px; }
+.logos img {
+  display: block; max-height: 46px; max-width: 150px; width: auto; height: auto;
+  background: #FFFFFF; border: 1px solid var(--line); border-radius: var(--r);
+  padding: 11px 16px; box-sizing: content-box;
+}
+.stats { display: flex; flex-wrap: wrap; gap: 14px 36px; margin-top: 42px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.14); }
+.stat { display: flex; align-items: baseline; gap: 9px; }
+.stat b { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--on-deep); white-space: nowrap; }
+.stat span { font-size: var(--s2); color: var(--on-deep-m); }
+
+/* ---------- selector de línea ---------- */
+.switch { display: inline-flex; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px; gap: 4px; flex-wrap: wrap; }
+.band-soft .switch { background: var(--bg); }
+.switch button {
+  font: inherit; font-size: var(--s2); font-weight: 600;
+  border: 0; background: transparent; color: var(--muted);
+  padding: 8px 18px; border-radius: 999px; cursor: pointer;
+}
+.switch button[aria-pressed="true"] { background: var(--deep); color: #FFFFFF; }
+.switch-note { font-size: var(--s2); color: var(--muted); margin-top: 12px; }
+
+/* ---------- grillas y tarjetas ---------- */
+.grid { display: grid; gap: 18px; margin-top: 34px; }
+.g2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.g3 { grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r); padding: 24px; min-width: 0;
+}
+.card h3 { font-size: var(--h3); }
+/* Una tarjeta clara dentro de una banda oscura conserva su propio color de texto. */
+.band-deep .card, .band-deep .vs-a { color: var(--fg); }
+.card p { color: var(--muted); font-size: var(--s3); margin-top: 10px; }
+.card .num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--mid); color: #FFFFFF;
+  font-family: var(--serif); font-weight: 700; font-size: .95rem;
+  margin-bottom: 14px;
+}
+.card .num.lead { background: var(--accent); color: #16233A; }
+
+/* ---------- planes ---------- */
+.plan { display: flex; flex-direction: column; }
+.plan .tag { font-size: var(--s1); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--mid); margin-top: 4px; }
+.plan .uf { font-family: var(--serif); font-size: 2.6rem; font-weight: 700; color: var(--accent-tx); line-height: 1; margin-top: 14px; }
+.plan .mes { color: var(--muted); font-size: var(--s2); margin-top: 6px; }
+.plan ul { margin-top: 18px; display: grid; gap: 10px; }
+.plan li { display: flex; gap: 10px; font-size: var(--s3); line-height: 1.5; }
+.plan li svg { flex: none; margin-top: 4px; }
+.plan .topes {
+  margin-top: auto; padding-top: 18px;
+  font-size: var(--s2); color: var(--on-deep);
+  background: var(--deep); border-radius: var(--r);
+  padding: 13px 15px; line-height: 1.45;
+}
+.plan.destacado { border-color: var(--mid); }
+
+/* ---------- tabla de encargos ---------- */
+.rows { display: grid; gap: 8px; margin-top: 30px; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); }
+.row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r);
+  padding: 13px 18px; min-width: 0;
+}
+.row span { font-size: var(--s3); min-width: 0; }
+.row b { font-size: var(--s3); color: var(--accent-tx); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* ---------- plata con destino ---------- */
+.plata { margin-top: 32px; }
+.plata-bar {
+  display: flex; width: 100%; height: 66px;
+  border-radius: var(--r); overflow: hidden;
+}
+.plata-bar .seg {
+  flex: var(--w) 1 0; min-width: 0;
+  display: grid; place-items: center;
+  font-family: var(--sans); font-weight: 700; font-size: var(--s3);
+  font-variant-numeric: tabular-nums;
+}
+.plata-bar .seg i { font-style: normal; }
+.plata-bar .s1 { background: var(--seg1); color: var(--seg1-fg); }
+.plata-bar .s2 { background: var(--seg2); color: var(--seg2-fg); }
+.plata-bar .s3 { background: var(--seg3); color: var(--seg3-fg); }
+.plata-bar .s4 { background: var(--seg4); color: var(--seg4-fg); }
+.plata-bar .s5 { background: var(--seg5); color: var(--seg5-fg); }
+.plata-key {
+  list-style: none; margin: 22px 0 0; padding: 0;
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+.plata-key li { min-width: 0; font-size: var(--s2); color: var(--muted); line-height: 1.5; }
+.plata-key b { display: block; color: var(--fg); font-size: var(--s3); margin: 8px 0 4px; }
+.plata-key .dot { display: block; width: 28px; height: 6px; border-radius: 3px; }
+.plata-key .d1 { background: var(--seg1); }
+.plata-key .d2 { background: var(--seg2); }
+.plata-key .d3 { background: var(--seg3); }
+.plata-key .d4 { background: var(--seg4); }
+.plata-key .d5 { background: var(--seg5); }
+@media (max-width: 720px) {
+  .plata-bar { height: 42px; }
+  .plata-bar .seg i { display: none; }
+}
+
+/* ---------- a medida ---------- */
+.niveles { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 10px; }
+.niveles li {
+  font-size: var(--s2); color: var(--muted); line-height: 1.5;
+  padding-left: 16px; border-left: 3px solid var(--line);
+}
+.niveles b { color: var(--fg); }
+#amedida .card { display: flex; flex-direction: column; }
+#amedida .nota { margin-top: auto; }
+.card .nota {
+  margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--line);
+  font-size: var(--s2); color: var(--accent-tx); font-weight: 600;
+}
+
+/* ---------- comparación ---------- */
+.vs { display: grid; gap: 16px; margin-top: 34px; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); }
+.vs-box { border-radius: var(--r); padding: 22px 24px; min-width: 0; }
+.vs-a { background: var(--card); border: 1px solid var(--line); }
+.vs-b { background: var(--deep-2); color: var(--on-deep); }
+.vs-box .k { font-size: var(--s1); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.vs-b .k { color: var(--accent); }
+.vs-box .t { font-weight: 600; font-size: var(--s4); margin-top: 6px; }
+.vs-box .m { font-family: var(--serif); font-size: 1.9rem; font-weight: 700; margin-top: 10px; font-variant-numeric: tabular-nums; }
+.vs-box .d { font-size: var(--s2); color: var(--muted); margin-top: 10px; }
+.vs-b .d { color: var(--on-deep-m); }
+
+/* ---------- quién soy ---------- */
+.about { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+.about-main { flex: 999 1 400px; min-width: 0; }
+.about-main p + p { margin-top: 16px; }
+.rules { flex: 1 1 290px; min-width: 0; display: grid; gap: 12px; }
+.rule { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 16px 18px; }
+.rule b { display: block; font-size: var(--s3); }
+.rule span { display: block; font-size: var(--s2); color: var(--muted); margin-top: 4px; }
+.retrato {
+  float: left; width: 158px; height: 158px; border-radius: 50%;
+  object-fit: cover; margin: 5px 24px 14px 0;
+  border: 3px solid var(--card); box-shadow: 0 2px 14px rgba(22,35,58,.16);
+}
+@media (max-width: 560px) { .retrato { width: 108px; height: 108px; margin-right: 18px; } }
+
+/* ---------- plan micro ---------- */
+.micro {
+  margin-top: 24px; display: flex; flex-wrap: wrap; gap: 26px; align-items: center;
+  background: var(--deep); color: var(--on-deep);
+  border-radius: var(--r); padding: 26px 28px;
+}
+.micro-l { flex: 999 1 340px; min-width: 0; }
+.micro-r { flex: 1 1 170px; min-width: 0; }
+.micro .k { font-size: var(--s1); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+.micro h3 { font-size: var(--h3); margin-top: 7px; }
+.micro p { font-size: var(--s3); color: var(--on-deep-m); margin-top: 11px; line-height: 1.55; }
+.micro .limite { font-size: var(--s2); }
+.micro .uf { font-family: var(--serif); font-size: 2.4rem; font-weight: 700; line-height: 1; color: var(--accent); }
+.micro .mes { font-size: var(--s2); color: var(--on-deep-m); margin-top: 7px; }
+.micro .btn { margin-top: 17px; }
+#amedida .card p b { color: var(--fg); }
+
+/* ---------- reseñas ---------- */
+.quotes {
+  display: grid; gap: 18px; margin-top: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+}
+.quote {
+  margin: 0; min-width: 0; display: flex; flex-direction: column; gap: 20px;
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--r); padding: 28px;
+}
+.quote blockquote {
+  margin: 0; font-family: var(--serif);
+  font-size: clamp(1rem, 1.6vw, 1.15rem); line-height: 1.52; color: var(--fg);
+}
+.quote blockquote p { margin: 0; }
+.quote blockquote p + p { margin-top: 13px; }
+.quote figcaption { display: flex; align-items: center; gap: 14px; margin-top: auto; }
+.quote img {
+  width: 58px; height: 58px; border-radius: 50%;
+  object-fit: cover; flex: none; background: var(--surface);
+}
+.quote-ini {
+  width: 58px; height: 58px; border-radius: 50%; flex: none;
+  display: grid; place-items: center;
+  background: var(--surface); border: 1px solid var(--line);
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--mid);
+}
+.quote-who { min-width: 0; }
+.quote-who b { display: block; font-size: var(--s3); font-weight: 600; }
+.quote-who span { font-size: var(--s2); color: var(--muted); }
+
+/* ---------- pendiente ---------- */
+.todo {
+  border: 1px dashed var(--mid); border-radius: var(--r);
+  padding: 22px 24px; color: var(--muted); font-size: var(--s3);
+}
+.todo b { color: var(--fg); }
+
+/* ---------- faq ---------- */
+.faq { margin-top: 30px; display: grid; gap: 10px; max-width: 760px; }
+.faq details { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); }
+.faq summary {
+  cursor: pointer; padding: 16px 20px; font-weight: 600; font-size: var(--s3);
+  list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: center;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--accent-tx); font-size: 1.3rem; font-weight: 400; line-height: 1; flex: none; }
+.faq details[open] summary::after { content: "–"; }
+.faq .a { padding: 0 20px 18px; color: var(--muted); font-size: var(--s3); max-width: 62ch; }
+
+/* ---------- contacto / pie ---------- */
+.contact-box { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; align-items: center; }
+.phone {
+  font-family: var(--serif); font-size: 1.5rem; font-weight: 700;
+  color: var(--on-deep); font-variant-numeric: tabular-nums;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+  border-radius: var(--r); padding: 10px 18px;
+}
+.copy { font: inherit; font-size: var(--s2); font-weight: 600; cursor: pointer;
+  background: transparent; color: var(--on-deep-m); border: 1px solid rgba(255,255,255,.3);
+  border-radius: var(--r); padding: 10px 16px; }
+.copy:hover { color: var(--on-deep); border-color: rgba(255,255,255,.6); }
+footer { background: var(--deep-2); color: var(--on-deep-m); }
+footer .wrap { padding-block: 26px; display: flex; flex-wrap: wrap; gap: 10px 26px; justify-content: space-between; font-size: var(--s2); }
+
+.band-accent {
+  background: var(--accent); color: #16233A;
+  border-radius: var(--r); padding: 16px 22px; margin-top: 28px;
+  font-size: var(--s3); line-height: 1.5;
+}
+.band-accent b { font-size: var(--s4); }
+
+.foot-note { font-size: var(--s2); color: var(--muted); margin-top: 26px; }
+.band-deep .foot-note { color: var(--on-deep-m); }
+
+/* ---------- cotizador ---------- */
+.cot { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 32px; align-items: flex-start; }
+.cot-form { flex: 999 1 380px; min-width: 0; display: grid; gap: 22px; }
+.cot-side { flex: 1 1 320px; min-width: 0; }
+.fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 10px; }
+.fieldset > legend { font-size: var(--s2); font-weight: 700; padding: 0; margin-bottom: 2px; }
+.nums { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field label { font-size: var(--s2); font-weight: 600; }
+.field .hint { font-size: var(--s1); color: var(--muted); line-height: 1.4; }
+.field input[type="number"] {
+  font: inherit; font-size: var(--s3); font-variant-numeric: tabular-nums;
+  padding: 10px 12px; border-radius: var(--r);
+  border: 1px solid var(--line); background: var(--bg); color: var(--fg);
+  width: 100%;
+}
+.opts { display: grid; gap: 8px; }
+.opt {
+  display: flex; gap: 11px; align-items: flex-start; font-size: var(--s3);
+  padding: 12px 15px; border: 1px solid var(--line); border-radius: var(--r);
+  background: var(--bg); cursor: pointer; min-width: 0;
+}
+.opt input { margin: 4px 0 0; accent-color: var(--accent); flex: none; }
+.opt.sel { border-color: var(--mid); background: var(--surface); }
+.opt.off { opacity: .5; cursor: not-allowed; }
+.opt b { font-weight: 600; }
+.opt .why { display: block; font-size: var(--s1); color: var(--muted); margin-top: 2px; }
+
+.out { background: var(--deep); color: var(--on-deep); border-radius: var(--r); padding: 26px 26px 24px; }
+.out .k { font-size: var(--s1); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--on-deep-m); }
+.out .plan-name { font-family: var(--serif); font-size: 1.6rem; font-weight: 700; margin-top: 6px; }
+.out .lines { display: grid; gap: 9px; margin: 18px 0; font-size: var(--s2); }
+.out .line { display: flex; justify-content: space-between; gap: 14px; }
+.out .line span { color: var(--on-deep-m); min-width: 0; }
+.out .line b { font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; }
+.out .total { border-top: 1px solid rgba(255,255,255,.2); padding-top: 18px; }
+.out .big { font-family: var(--serif); font-size: 2.6rem; font-weight: 700; color: var(--accent); line-height: 1; font-variant-numeric: tabular-nums; }
+.out .sub { font-size: var(--s2); color: var(--on-deep-m); margin-top: 7px; }
+.out .diag { margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.2); font-size: var(--s2); color: var(--on-deep-m); }
+.out .diag b { color: var(--on-deep); }
+.out .aviso { margin-top: 16px; font-size: var(--s2); background: rgba(255,90,60,.16); border-radius: var(--r); padding: 12px 14px; color: var(--on-deep); }
+.out .btn { margin-top: 20px; width: 100%; text-align: center; }
+
+/* En celular la barra queda en una sola fila: marca y botón. */
+@media (max-width: 700px) {
+  .nav nav a:not(.btn) { display: none; }
+  .nav .wrap { padding-block: 10px; gap: 12px; flex-wrap: nowrap; }
+  .brand { font-size: .95rem; min-width: 0; }
+  .nav .btn { padding: 9px 14px; white-space: nowrap; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#inicio">Tatiana Pérez Cáceres</a>
+    <nav>
+      <a href="#problema">El problema</a>
+      <a href="#como">Cómo trabajo</a>
+      <a href="#contador">Contabilidad</a>
+      <a href="#planes">Planes</a>
+      <a href="#cotizador">Cotiza tu caso</a>
+      <a href="#quien">Quién soy</a>
+      <a class="btn" href="#contacto">Agenda tu diagnóstico</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero band-deep" id="inicio">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-main">
+        <p class="eyebrow">Contabilidad, administración financiera y back-office</p>
+        <h1>No te vendo horas.<br>Te vendo que esto deje de ser tu problema.</h1>
+        <p class="lede">Tú no necesitas saber cuánto me demoro. Necesitas saber que tus trabajadores reciben su sueldo a tiempo, que el F29 y Previred están pagados, y que el contador tiene todo para cerrar.</p>
+        <div class="hero-id">
+          <img src="tati.jpg" alt="Tatiana Pérez Cáceres" width="640" height="640">
+          <div class="who"><b>Tatiana Pérez Cáceres</b><i>Contador auditor e ingeniero comercial</i></div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn" href="#planes">Ver planes y precios</a>
+          <a class="btn btn-ghost" href="#contacto">Agenda tu diagnóstico</a>
+          <a class="btn btn-ghost" href="#contador">Necesito contador</a>
+        </div>
+      </div>
+      <div class="price-card">
+        <div class="k">Desde</div>
+        <div class="n">9 UF</div>
+        <div class="u">al mes, más IVA</div>
+        <hr>
+        <div class="f">El diagnóstico se descuenta completo si contratas dentro de 60 días.</div>
+        <a class="plink" href="#planes">Ver los tres planes →</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>15 años</b><span>en finanzas, contabilidad y recursos humanos</span></div>
+      <div class="stat"><b>1 sola</b><span>persona para contabilidad, sueldos y finanzas</span></div>
+      <div class="stat"><b>24 h</b><span>hábiles para responderte</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band-soft logos-band">
+  <div class="wrap">
+    <p class="logos-k">Algunas empresas que han confiado en mí</p>
+    <div class="logos">
+      <img src="logo-miido.png" alt="MIIDO" width="258" height="116">
+      <img src="logo-loadingplay.png" alt="Loadingplay Tech" width="95" height="76">
+      <img src="logo-codename.png" alt="Code/Name" width="256" height="115">
+      <img src="logo-mda.png" alt="MDA Chile" width="167" height="160">
+      <img src="logo-kickass.png" alt="The Kickass.co" width="168" height="40">
+    </div>
+  </div>
+</section>
+
+<section id="problema">
+  <div class="wrap">
+    <p class="eyebrow">Lo que vemos siempre</p>
+    <h2>Vender no es lo mismo que tener plata</h2>
+    <p class="lede prose">Cuéntame qué tipo de negocio tienes y te muestro lo que suele estar pasando.</p>
+
+    <div style="margin-top:26px">
+      <div class="switch" role="group" aria-label="Tipo de negocio">
+        <button type="button" id="btn-empresas" data-linea="empresas" aria-pressed="true">Le facturo a empresas</button>
+        <button type="button" id="btn-comercio" data-linea="comercio" aria-pressed="false">Vendo al público</button>
+      </div>
+      <p class="switch-note" id="switch-note">Servicios, distribución, tecnología, contratistas: vendes a otras empresas y cobras con factura.</p>
+    </div>
+
+    <div class="grid g3" data-linea-panel="empresas">
+      <article class="card"><h3>Facturas hoy, cobras en 60 días</h3><p>Mientras tanto pagas sueldos, proveedores e impuestos con plata que todavía no tienes.</p></article>
+      <article class="card"><h3>Los clientes grandes pagan cuando quieren</h3><p>Y nadie tiene tiempo de hacerles seguimiento hasta que la caja ya está en rojo.</p></article>
+      <article class="card"><h3>Los sueldos y el F29 no esperan</h3><p>Tienen fecha fija. Tus cobros no. Esa diferencia es donde se aprieta todo.</p></article>
+      <article class="card"><h3>Creces y te quedas sin caja</h3><p>Más ventas a plazo significa más plata en la calle. Crecer sin control cuesta caro.</p></article>
+      <article class="card"><h3>El contador declara, pero no opera</h3><p>Alguien tiene que pagar, cobrar, cuadrar y tener los papeles listos antes del cierre.</p></article>
+      <article class="card"><h3>Los papeles llegan siempre a última hora</h3><p>El F30-1 del mandante, el certificado para el banco, la carpeta de la licitación.</p></article>
+    </div>
+
+    <div class="grid g3" data-linea-panel="comercio" hidden>
+      <article class="card"><h3>Plata mezclada</h3><p>La del negocio y la de la casa salen de la misma cuenta. No sabes si ganas o pierdes.</p></article>
+      <article class="card"><h3>El IVA se gasta</h3><p>Vendes con IVA incluido, se usa como caja, y el F29 llega sin plata para pagarlo.</p></article>
+      <article class="card"><h3>Comisiones invisibles</h3><p>No sabes cuánto te quitan Transbank, Getnet o Mercado Pago, ni si te abonaron todo.</p></article>
+      <article class="card"><h3>Caja que no cuadra</h3><p>Efectivo, tarjeta y transferencias no calzan con lo que vendiste.</p></article>
+      <article class="card"><h3>Margen desconocido</h3><p>Vendes mucho de algo que casi no te deja nada, y no lo sabes.</p></article>
+      <article class="card"><h3>Sin sueldo propio</h3><p>Sacas cuando puedes. Eso descuadra el negocio y tu casa al mismo tiempo.</p></article>
+    </div>
+
+    <figure class="destacado-quote">
+      <img src="benjamin.jpg" alt="Retrato de Benjamín Martínez" width="440" height="440">
+      <p>“Nos quitaba mucho tiempo y foco del producto. Tati nos devolvió ese tiempo y nos ha ayudado a no tener multas. Al final todo eso se traduce en plata.”<cite>Benjamín Martínez · COO de MIIDO</cite></p>
+    </figure>
+  </div>
+</section>
+
+<section class="band-soft" id="como">
+  <div class="wrap">
+    <p class="eyebrow">Cómo trabajamos</p>
+    <h2>Dos pasos, sin compromisos a ciegas</h2>
+    <p class="lede prose">Primero entiendo tu operación y te entrego un plan por escrito. Después decides tú cuánto de ese plan hago yo.</p>
+
+    <div class="grid g2">
+      <article class="card">
+        <span class="num lead">1</span>
+        <h3>Diagnóstico y Plan</h3>
+        <p>Reviso el estado real de tu administración y te entrego un informe escrito con los riesgos detectados y un plan priorizado: qué hacer, en qué orden y quién lo hace. Termina con una reunión de 60 minutos para revisarlo contigo.</p>
+        <p style="color:var(--accent-tx);font-weight:600;margin-top:14px">4 UF micro · 6 UF pyme · pago único</p>
+        <p>El informe se entrega siempre, contrates o no lo que viene después. Si contratas dentro de 60 días, se descuenta completo.</p>
+      </article>
+      <article class="card">
+        <span class="num">2</span>
+        <h3>Tú eliges el camino</h3>
+        <p>Con el plan en la mano, decides cuánta pega se va de tu escritorio.</p>
+        <ul style="margin-top:16px;display:grid;gap:12px">
+          <li><b>Lo hago yo.</b> Planes mensuales desde 9 UF: me hago cargo de la operación y del control financiero, mes a mes.</li>
+          <li><b>Lo dejo andando y sigues tú.</b> Proyecto cerrado de 3 a 6 semanas: dejo procesos, plantillas y calendario funcionando, capacito a tu equipo y me salgo.</li>
+          <li><b>Lo haces tú y yo respaldo.</b> 5 UF al mes: tu equipo ejecuta, yo reviso cada mes que esté bien hecho antes de que sea un problema.</li>
+          <li><b>Solo la contabilidad.</b> Si lo que te falta es quien declare, lleve los libros y cierre el año, se contrata sola: desde 3 UF al mes.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band-deep" id="contador">
+  <div class="wrap">
+    <p class="eyebrow">Contabilidad</p>
+    <h2>¿No tienes contador?</h2>
+    <p class="lede prose">Soy contador auditor: declaraciones, libros y cierre anual. Puede ir junto con tu plan o contratarse sola.</p>
+
+    <div class="grid g3">
+      <article class="card">
+        <h3>Junto con tu plan</h3>
+        <p>La contabilidad va con la operación del mes a mes: una sola persona a cargo de las dos cosas y un solo interlocutor.</p>
+      </article>
+      <article class="card">
+        <h3>Solo contabilidad</h3>
+        <p>Si ya tienes resuelto el back-office y lo que falta es quien declare, lleve los libros y cierre el año, se contrata sola.</p>
+      </article>
+      <article class="card">
+        <h3>Cambio de contador</h3>
+        <p>Me hago cargo del traspaso: carpeta tributaria, claves, cierre del período con el anterior y puesta al día.</p>
+      </article>
+    </div>
+    <p class="band-accent"><b>Con plan o sin plan. Desde 3 UF al mes.</b> El valor final depende del tamaño de tu empresa, el giro y el volumen de documentos.</p>
+
+    <div class="hero-actions">
+      <a class="btn" href="https://wa.me/56973327384" target="_blank" rel="noopener">Pídeme una cotización</a>
+    </div>
+    <p class="foot-note">Para cotizar la contabilidad no necesitas hacer el diagnóstico. Con una revisión corta de tu situación en el SII —régimen, documentos al mes, cómo vienen los períodos anteriores— te doy un valor.</p>
+  </div>
+</section>
+
+<section id="planes">
+  <div class="wrap">
+    <p class="eyebrow">Planes mensuales</p>
+    <h2>Qué deja de estar en tu escritorio</h2>
+    <p class="lede prose">Cada plan se define por lo que dejas de hacer tú, y cubre un tamaño de negocio conocido de antemano.</p>
+
+    <div style="margin-top:26px">
+      <div class="switch" role="group" aria-label="Tipo de negocio">
+        <button type="button" id="btn2-empresas" data-linea="empresas" aria-pressed="true">Le facturo a empresas</button>
+        <button type="button" id="btn2-comercio" data-linea="comercio" aria-pressed="false">Vendo al público</button>
+      </div>
+    </div>
+
+    <!-- EMPRESAS -->
+    <div class="grid g3" data-linea-panel="empresas">
+      <article class="card plan">
+        <h3>Básico</h3>
+        <div class="tag">Orden y cumplimiento</div>
+        <div class="uf">9 UF</div>
+        <div class="mes">al mes, más IVA</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Registro y verificación de facturas de compra</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pagos a proveedores programados y ejecutados</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Liquidaciones de sueldo y Previred</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Control de vencimientos: F29, Previred y cotizaciones</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Nexo con el contador y reporte de cierre mensual</span></li>
+        </ul>
+        <div class="topes">20 facturas · 3 trabajadores · 2 documentos para trámites · 1 reunión trimestral</div>
+      </article>
+
+      <article class="card plan destacado">
+        <h3>Crece</h3>
+        <div class="tag">Control financiero</div>
+        <div class="uf">15 UF</div>
+        <div class="mes">al mes, más IVA</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Todo lo del Básico, con topes más altos</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Control de cobranza: quién debe, cuánto y desde cuándo</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Flujo de caja proyectado a 3 y 6 meses</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Presupuesto anual y comparación contra lo real</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Plata con destino: impuestos, reserva y reinversión apartados</span></li>
+        </ul>
+        <div class="topes">30 facturas · 5 trabajadores · 3 documentos para trámites · 1 reunión mensual</div>
+      </article>
+
+      <article class="card plan">
+        <h3>Integral</h3>
+        <div class="tag">Back-office completo</div>
+        <div class="uf">24 UF</div>
+        <div class="mes">al mes, más IVA</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Todo lo del Crece, con topes más altos</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Gestión de personas: contratos, vacaciones y licencias</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Finiquitos preparados y coordinados</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Certificados laborales al día para clientes que los exigen</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Coordinación con contador, prevencionista y abogado</span></li>
+        </ul>
+        <div class="topes">40 facturas · 10 trabajadores · 4 documentos para trámites · 1 reunión mensual y 1 trimestral</div>
+      </article>
+    </div>
+
+    <!-- COMERCIO -->
+    <div class="grid g3" data-linea-panel="comercio" hidden>
+      <article class="card plan">
+        <h3>Básico</h3>
+        <div class="tag">Caja en orden</div>
+        <div class="uf">9 UF</div>
+        <div class="mes">al mes, más IVA</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Cuadratura de caja: efectivo, tarjeta y transferencias</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Conciliación de abonos de medios de pago y sus comisiones</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IVA provisionado: la plata del F29 guardada antes de que llegue</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Registro de facturas de compra</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Liquidaciones de sueldo, Previred y reporte mensual</span></li>
+        </ul>
+        <div class="topes">20 facturas · 3 trabajadores · 2 medios de pago · 2 documentos · 1 reunión trimestral</div>
+      </article>
+
+      <article class="card plan destacado">
+        <h3>Crece</h3>
+        <div class="tag">Margen y ahorro</div>
+        <div class="uf">15 UF</div>
+        <div class="mes">al mes, más IVA</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Todo lo del Básico, con topes más altos</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Plata con destino: apartados de impuestos, reserva y reinversión</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sueldo fijo para ti, definido y respetado</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Flujo de caja semanal a 13 semanas</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Margen por producto o servicio y punto de equilibrio</span></li>
+        </ul>
+        <div class="topes">30 facturas · 5 trabajadores · 3 medios de pago · 3 documentos · 1 reunión mensual</div>
+      </article>
+
+      <article class="card plan">
+        <h3>Integral</h3>
+        <div class="tag">Todo resuelto</div>
+        <div class="uf">24 UF</div>
+        <div class="mes">al mes, más IVA</div>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Todo lo del Crece, con topes más altos</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Gestión de personas: contratos, vacaciones y licencias</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Finiquitos preparados y coordinados</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Presupuesto anual con revisión mensual</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Coordinación con contador y prevencionista</span></li>
+        </ul>
+        <div class="topes">40 facturas · 10 trabajadores · 4 medios de pago · 4 documentos · 1 reunión mensual y 1 trimestral</div>
+      </article>
+    </div>
+
+    <div class="micro">
+      <div class="micro-l">
+        <p class="k">¿Tu negocio es más chico que esto?</p>
+        <h3>Plan Micro</h3>
+        <p>Para empresas de hasta 1 trabajador y 10 facturas al mes. F29, una cuenta o caja cuadrada, vencimientos avisados y un reporte mensual de una página. Una reunión de 30 minutos cada seis meses.</p>
+        <p class="limite">Cuesta menos porque trabajo estos casos en lote: días fijos del mes, el mismo formato para todos, sin urgencias ni personalización. No incluye cobranza, flujo de caja ni paquete de documentos; eso parte en el Básico. Si contratas a un segundo trabajador o pasas las 10 facturas, el plan sube.</p>
+      </div>
+      <div class="micro-r">
+        <div class="uf">5 UF</div>
+        <div class="mes">al mes, más IVA</div>
+        <a class="btn" href="https://wa.me/56973327384" target="_blank" rel="noopener">Ver si califico</a>
+      </div>
+    </div>
+
+    <p class="foot-note">El tope no limita el servicio: define el tamaño de negocio que el plan cubre. Si creces, ajustamos el plan contigo y con aviso previo.</p>
+  </div>
+</section>
+
+<section class="band-deep" id="comparacion">
+  <div class="wrap">
+    <p class="eyebrow">Hagamos la cuenta</p>
+    <h2>¿Y si mejor contrato a alguien?</h2>
+    <p class="lede prose">La comparación correcta no es contra un contador: es contra lo que te cuesta tener a alguien adentro.</p>
+
+    <div class="vs">
+      <div class="vs-box vs-a">
+        <div class="k">Contratar</div>
+        <div class="t">Asistente contable</div>
+        <div class="m">$584.000</div>
+        <div class="d">Sueldo medio en Chile. Súmale cotizaciones del empleador, equipo, y el riesgo de que renuncie y se lleve lo que sabe.</div>
+      </div>
+      <div class="vs-box vs-b">
+        <div class="k">Conmigo</div>
+        <div class="t">Plan Básico</div>
+        <div class="m">$433.000</div>
+        <div class="d">Liquidaciones, Previred, F29 y pagos a proveedores incluidos. Todo documentado: nada depende de una sola persona.</div>
+      </div>
+      <div class="vs-box vs-a">
+        <div class="k">Contratar</div>
+        <div class="t">Analista contable</div>
+        <div class="m">$841.000</div>
+        <div class="d">Sueldo medio en Chile. Mismos costos adicionales, y además hay que supervisarlo.</div>
+      </div>
+      <div class="vs-box vs-b">
+        <div class="k">Conmigo</div>
+        <div class="t">Plan Crece</div>
+        <div class="m">$722.000</div>
+        <div class="d">Flujo de caja, cobranza, presupuesto y ahorro con criterio financiero, más toda la operación.</div>
+      </div>
+    </div>
+    <p class="foot-note">Sueldos medios según Computrabajo Chile, 2026. Planes a costo total, con IVA incluido.</p>
+  </div>
+</section>
+
+<section id="plata">
+  <div class="wrap">
+    <p class="eyebrow">Incluido desde el plan Crece</p>
+    <h2>Plata con destino</h2>
+    <p class="lede prose">El problema casi nunca es cuánto entra: es que todo entra al mismo bolsillo y se gasta sin saber de dónde salió. Cada peso que llega se reparte el mismo día.</p>
+
+    <div class="plata">
+      <div class="plata-bar" role="img" aria-label="De cada 100 pesos que entran: 55 a operación, 12 a impuestos, 18 a tu sueldo o retiros, 5 a reserva y 10 a reinversión.">
+        <span class="seg s1" style="--w:55"><i>55</i></span>
+        <span class="seg s2" style="--w:12"><i>12</i></span>
+        <span class="seg s3" style="--w:18"><i>18</i></span>
+        <span class="seg s4" style="--w:5"><i>5</i></span>
+        <span class="seg s5" style="--w:10"><i>10</i></span>
+      </div>
+
+      <ul class="plata-key">
+        <li><span class="dot d1"></span><b>Operación · 55%</b>Proveedores, arriendo, sueldos. Lo que mantiene la cortina arriba.</li>
+        <li><span class="dot d2"></span><b>Impuestos · 12%</b>El IVA y el PPM apartados el mismo día que entra la plata. Nunca más un F29 que te sorprende.</li>
+        <li><span class="dot d3"></span><b>Tu sueldo o retiros · 18%</b>Un monto fijo, igual todos los meses. Dejas de vivir de lo que sobra.</li>
+        <li><span class="dot d4"></span><b>Reserva · 5%</b>El colchón para el mes malo. Siempre llega uno.</li>
+        <li><span class="dot d5"></span><b>Reinversión · 10%</b>Lo que te deja crecer sin salir a pedir plata prestada.</li>
+      </ul>
+    </div>
+
+    <p class="foot-note">Estos porcentajes son un ejemplo. Los tuyos salen de tu flujo real: los definimos juntos en el plan y después reviso mes a mes que se estén respetando.</p>
+  </div>
+</section>
+
+<section class="band-soft" id="cotizador">
+  <div class="wrap">
+    <p class="eyebrow">Cotiza tu caso</p>
+    <h2>Cuánto te costaría a ti</h2>
+    <p class="lede prose">Cuéntame el tamaño de tu operación y te muestro el plan que te corresponde y en cuánto queda. Es una estimación: el valor final se confirma con el diagnóstico.</p>
+
+    <div class="cot">
+      <div class="cot-form">
+
+        <fieldset class="fieldset">
+          <legend>¿Qué tipo de negocio tienes?</legend>
+          <div class="opts">
+            <label class="opt sel" for="cot-l-emp">
+              <input type="radio" name="cot-linea" id="cot-l-emp" value="empresas" checked>
+              <span><b>Le facturo a empresas</b><span class="why">Servicios, distribución, tecnología, contratistas.</span></span>
+            </label>
+            <label class="opt" for="cot-l-com">
+              <input type="radio" name="cot-linea" id="cot-l-com" value="comercio">
+              <span><b>Vendo al público</b><span class="why">Almacenes, restaurantes, peluquerías, tiendas, talleres.</span></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>El tamaño de tu operación</legend>
+          <div class="nums">
+            <div class="field">
+              <label for="cot-trab">Trabajadores</label>
+              <input type="number" id="cot-trab" min="0" max="60" step="1" value="3" inputmode="numeric">
+              <span class="hint">Con contrato, incluidos los part-time.</span>
+            </div>
+            <div class="field">
+              <label for="cot-fact">Facturas de compra al mes</label>
+              <input type="number" id="cot-fact" min="0" max="300" step="1" value="18" inputmode="numeric">
+              <span class="hint">Las que recibes de proveedores. Las boletas de venta no cuentan.</span>
+            </div>
+            <div class="field">
+              <label for="cot-razones">Razones sociales</label>
+              <input type="number" id="cot-razones" min="1" max="6" step="1" value="1" inputmode="numeric">
+              <span class="hint">Cada empresa suma su F29, Previred y nómina.</span>
+            </div>
+            <div class="field" id="campo-medios" hidden>
+              <label for="cot-medios">Medios de pago y cuentas</label>
+              <input type="number" id="cot-medios" min="1" max="12" step="1" value="2" inputmode="numeric">
+              <span class="hint">Cada POS, app o cuenta bancaria que hay que conciliar.</span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>¿Qué plan quieres?</legend>
+          <div class="opts" id="cot-planes">
+            <label class="opt" for="cot-p-micro">
+              <input type="radio" name="cot-plan" id="cot-p-micro" value="micro">
+              <span><b>Micro · 5 UF</b><span class="why" data-why="micro">Lo mínimo para cumplir: F29, caja cuadrada y reporte.</span></span>
+            </label>
+            <label class="opt" for="cot-p-basico">
+              <input type="radio" name="cot-plan" id="cot-p-basico" value="basico">
+              <span><b>Básico · 9 UF</b><span class="why" data-why="basico">Orden y cumplimiento del mes a mes.</span></span>
+            </label>
+            <label class="opt" for="cot-p-crece">
+              <input type="radio" name="cot-plan" id="cot-p-crece" value="crece">
+              <span><b>Crece · 15 UF</b><span class="why" data-why="crece">Además, control financiero: flujo, presupuesto y ahorro.</span></span>
+            </label>
+            <label class="opt" for="cot-p-integral">
+              <input type="radio" name="cot-plan" id="cot-p-integral" value="integral">
+              <span><b>Integral · 24 UF</b><span class="why" data-why="integral">Además, toda la gestión de personas.</span></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>¿Necesitas algo más?</legend>
+          <div class="opts" id="cot-addons">
+            <label class="opt" for="cot-a-contratista" data-linea="empresas">
+              <input type="checkbox" id="cot-a-contratista" data-uf="2" data-nombre="Paquete Contratista">
+              <span><b>Paquete Contratista · 2 UF</b><span class="why">F30-1 por cada mandante, cumplimiento laboral y carpeta de subcontratación.</span></span>
+            </label>
+            <label class="opt" for="cot-a-emision" data-linea="empresas">
+              <input type="checkbox" id="cot-a-emision" data-uf="1.5" data-nombre="Emisión de facturas de venta">
+              <span><b>Emisión de facturas de venta · desde 1,5 UF</b><span class="why">Hasta 15 al mes. Si hay que pedirte los datos cada vez, sube a 2,5 UF.</span></span>
+            </label>
+            <label class="opt" for="cot-a-cobranza" data-linea="empresas">
+              <input type="checkbox" id="cot-a-cobranza" data-uf="2" data-nombre="Cobranza activa">
+              <span><b>Cobranza activa · 2 UF</b><span class="why">Escribo y llamo a tus deudores. Hasta 15 clientes en seguimiento.</span></span>
+            </label>
+            <label class="opt" for="cot-a-contador" data-linea="ambas">
+              <input type="checkbox" id="cot-a-contador" data-uf="0" data-nombre="Contabilidad" data-nota="desde 3 UF">
+              <span><b>Quiero que lleves tú la contabilidad</b><span class="why">Declaraciones, libros y cierre anual. Desde 3 UF al mes, según el tamaño de tu empresa.</span></span>
+            </label>
+          </div>
+          <p class="hint" id="addons-vacio" hidden>Para tu tipo de negocio no hay adicionales: todo lo que necesitas está en los planes.</p>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>¿Entras con otra empresa?</legend>
+          <div class="opts" id="cot-duo">
+            <label class="opt" for="cot-duo-si">
+              <input type="checkbox" id="cot-duo-si">
+              <span><b>Entramos dos empresas juntas · 10% menos</b><span class="why">El descuento es para las dos y se mantiene mientras ambas sigan activas. Cada una firma y paga lo suyo.</span></span>
+            </label>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <div class="cot-side">
+        <div class="out" aria-live="polite">
+          <div class="k">Tu estimación</div>
+          <div class="plan-name" id="r-plan">Plan Básico</div>
+          <div class="lines" id="r-lines"></div>
+          <div class="total">
+            <div class="big" id="r-total">9 UF</div>
+            <div class="sub" id="r-pesos">al mes, más IVA</div>
+          </div>
+          <div class="diag" id="r-diag"></div>
+          <div class="aviso" id="r-aviso" hidden></div>
+          <a class="btn" href="#contacto">Agenda tu diagnóstico</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="foot-note">Estimación referencial con la UF a $40.800. Los valores de los planes son netos; se les suma el IVA.</p>
+  </div>
+</section>
+
+<section id="encargos">
+  <div class="wrap">
+    <p class="eyebrow">A la carta</p>
+    <h2>Encargos puntuales, a precio cerrado</h2>
+    <p class="lede prose">No se cobran horas: se cobra el encargo. Sabes cuánto cuesta antes de pedirlo y nadie discute tiempos.</p>
+
+    <div class="rows">
+      <div class="row"><span>Poner al día un mes atrasado</span><b>2 UF</b></div>
+      <div class="row"><span>Regularizar un F29 fuera de plazo</span><b>2 UF</b></div>
+      <div class="row"><span>Conciliación de un mes atrasado</span><b>1,5 UF</b></div>
+      <div class="row"><span>Cierre puntual: carpeta lista para el contador</span><b>1,5 UF</b></div>
+      <div class="row"><span>Ordenar el pago a proveedores</span><b>2 UF</b></div>
+      <div class="row"><span>Ordenar las cuentas por cobrar</span><b>2 UF</b></div>
+      <div class="row"><span>Ingreso de un trabajador nuevo</span><b>0,5 UF</b></div>
+      <div class="row"><span>Finiquito puntual</span><b>0,5 – 1 UF</b></div>
+      <div class="row"><span>Análisis de estados financieros</span><b>2 – 4 UF</b></div>
+      <div class="row"><span>Flujo de caja o presupuesto puntual</span><b>2 UF</b></div>
+    </div>
+    <p class="foot-note">Lo que no esté en esta lista se cotiza como encargo cerrado, con precio y plazo definidos antes de empezar. Nunca abierto. Mínimo por encargo: 1 UF.</p>
+  </div>
+</section>
+
+<section class="band-soft" id="amedida">
+  <div class="wrap">
+    <p class="eyebrow">A medida</p>
+    <h2>Si nada de esto te calza</h2>
+    <p class="lede prose">No todos los negocios entran en un plan, y algunos todavía ni siquiera son una empresa. Estas son tres salidas que uso seguido.</p>
+
+    <div class="grid g3">
+      <article class="card">
+        <h3>Trae a otra empresa</h3>
+        <p>Si entras junto a otro negocio —un socio, un amigo con su propia empresa, tu proveedor— las dos quedan con <b>10% de descuento</b>, en cualquier plan, y lo mantienen mientras las dos sigan activas. Cada una firma lo suyo y paga lo suyo, con sus documentos y sus accesos por separado.</p>
+        <p class="nota">Una empresa nunca ve los números de la otra.</p>
+      </article>
+
+      <article class="card">
+        <h3>Formalizar tu empresa</h3>
+        <p>Constitución, RUT, inicio de actividades y facturación electrónica. Tres formas de hacerlo, según cuánto quieras meter las manos:</p>
+        <ul class="niveles">
+          <li><b>Te guío.</b> Te doy el orden, los plazos y qué pedir en cada parte. Lo haces tú.</li>
+          <li><b>Lo hacemos juntos.</b> Nos sentamos y lo vamos sacando paso a paso.</li>
+          <li><b>Lo hago por ti.</b> Me das el poder y te entrego la empresa lista para operar.</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Conversemos</h3>
+        <p>Si tu caso no se parece a ninguno de los anteriores, escríbeme igual. En media hora sabemos por dónde empezar y qué es lo primero que hay que ordenar.</p>
+        <p class="nota">Y si no soy yo quien te sirve, te lo digo.</p>
+      </article>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn" href="https://wa.me/56973327384" target="_blank" rel="noopener">Conversemos tu caso</a>
+    </div>
+  </div>
+</section>
+
+<section id="seguridad">
+  <div class="wrap">
+    <p class="eyebrow">Confianza</p>
+    <h2>Cómo trabajamos con seguridad</h2>
+    <p class="lede prose">Tres cosas que conviene dejar claras antes de empezar a trabajar juntos.</p>
+    <div class="grid g3">
+      <article class="card">
+        <span class="num lead">1</span>
+        <h3>¿En cuánto te respondo?</h3>
+        <p>Dentro de 24 horas hábiles, por un solo canal acordado. No siempre es al instante, pero ninguna consulta queda sin respuesta.</p>
+      </article>
+      <article class="card">
+        <span class="num">2</span>
+        <h3>¿Dónde queda todo?</h3>
+        <p>Procesos, calendario de vencimientos y accesos quedan documentados. Los accesos son tuyos: nada queda amarrado a mí.</p>
+      </article>
+      <article class="card">
+        <span class="num">3</span>
+        <h3>¿Vas a mover mi plata?</h3>
+        <p>Yo preparo los pagos; tú los apruebas o firmas en el banco. Nunca se mueve un peso sin tu visto bueno, y cada pago queda registrado.</p>
+      </article>
+    </div>
+    <p class="foot-note">Cuando un empleado renuncia, se lleva lo que sabe. Acá todo queda por escrito y en tus manos.</p>
+  </div>
+</section>
+
+<section class="band-soft" id="quien">
+  <div class="wrap">
+    <p class="eyebrow">Quién soy</p>
+    <h2>Tatiana Pérez Cáceres</h2>
+    <div class="about" style="margin-top:28px">
+      <div class="about-main prose">
+        <img class="retrato" src="tati.jpg" alt="Retrato de Tatiana Pérez Cáceres" width="640" height="640">
+        <p>Soy ingeniero comercial con especialidad en recursos humanos y contador auditor, con más de 15 años de experiencia en finanzas, contabilidad y recursos humanos, en empresas de todos los tamaños. Hoy trabajo con pymes, startups y negocios de comercio y servicios en Chile.</p>
+        <p>Trabajo con empresas que venden bien, pero que no tienen tiempo para perseguir facturas, calcular sueldos, cuadrar Previred o saber cuánta plata van a tener el próximo mes. Hoy acompaño a empresas de rubros muy distintos, desde tecnología hasta servicios y contratistas agrícolas, y en todas veo lo mismo: el problema casi nunca es vender poco, es no tener los números a la vista.</p>
+        <p>Mi objetivo es que sepas cuánto ganas, que cumplas sin sustos y que tu negocio ahorre para crecer con plata propia.</p>
+      </div>
+      <div class="rules">
+        <div class="rule"><b>Tú apruebas cada pago</b><span>Yo preparo, tú firmas. Nunca se mueve un peso sin tu visto bueno.</span></div>
+        <div class="rule"><b>Todo queda documentado</b><span>Procesos, calendario y accesos son tuyos. Nada queda amarrado a mí.</span></div>
+        <div class="rule"><b>Hablo claro</b><span>Si tu negocio tiene un problema, te lo digo con números, antes de que sea tarde.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="clientes">
+  <div class="wrap">
+    <p class="eyebrow">Clientes</p>
+    <h2>Lo que dicen de trabajar conmigo</h2>
+    <div class="quotes">
+
+      <figure class="quote">
+        <blockquote>
+          <p>“Los emprendedores generalmente queremos hacerlo todo, pero hay que enfocarse en lo que genera valor, y la administración es demasiado importante como para hacerla a medias.</p>
+          <p>A nosotros nos quitaba mucho tiempo y foco del producto, que es donde teníamos que estar. Tati es muy proactiva: nos devolvió ese tiempo, nos permitió enfocarnos y nos ha ayudado a no tener multas. Al final todo eso se traduce en plata.”</p>
+        </blockquote>
+        <figcaption>
+          <img src="benjamin.jpg" alt="Retrato de Benjamín Martínez" width="440" height="440">
+          <span class="quote-who"><b>Benjamín Martínez</b><span>COO de MIIDO</span></span>
+        </figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>
+          <p>“Antes tenía que hacerla yo. Estaba desordenada, era caótico, y siempre tenía miedo. Ahora ya no: estoy seguro de que estamos dando los pasos correctos, que manejamos todo de la forma más ordenada posible, sin multas y sin riesgo, porque Tati se hace cargo.</p>
+          <p>En la declaración de renta siempre está ahí para ayudarnos a optimizar y a pagar lo justo. Si lo estás dudando, hazlo sin pensarlo: es algo que tienes que tener si quieres tener una empresa, y la mejor forma es delegarlo a alguien que sabe y que no la va a embarrar.”</p>
+        </blockquote>
+        <figcaption>
+          <img src="ricardo.jpg" alt="Retrato de Ricardo Silva" width="440" height="440">
+          <span class="quote-who"><b>Ricardo Silva</b><span>Fundador de Loadingplay Tech y Code Name</span></span>
+        </figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>
+          <p>“Cuando partí hacía todo yo y vivía apagando incendios: el F29 a última hora, las comisiones que nunca cuadraban, los proveedores esperando. Con Tati eso se acabó.</p>
+          <p>No es que me ayudara con la administración: la administración era de ella. Yo vendía, y cada mes sabía exactamente cuánto entraba, cuánto salía y cuánto me quedaba.”</p>
+        </blockquote>
+        <figcaption>
+          <img src="francisca.jpg" alt="Retrato de Francisca Escobar Bascur" width="232" height="232">
+          <span class="quote-who"><b>Francisca Escobar Bascur</b><span>Cofundadora y CEO de The Kickass Company y MDA Chile</span></span>
+        </figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<section class="band-soft" id="preguntas">
+  <div class="wrap">
+    <p class="eyebrow">Preguntas frecuentes</p>
+    <h2>Lo que todos preguntan</h2>
+    <div class="faq">
+      <details>
+        <summary>¿Por qué cobras en UF y no en pesos?</summary>
+        <div class="a">Porque el servicio es de largo plazo y la UF evita tener que renegociar el precio cada año por inflación. Los valores se toman de la UF del último día hábil del mes de servicio. Hoy una UF son aproximadamente $40.800, así que el plan Básico son unos $367.000 líquidos al mes.</div>
+      </details>
+      <details>
+        <summary>¿Cobras por hora?</summary>
+        <div class="a">No. Cobrando por hora tú compras mi tiempo, y lo que necesitas no es mi tiempo: es que el tema quede resuelto. Si me demoro más, no pagas más. Todo tiene precio cerrado y lo sabes antes de pedirlo.</div>
+      </details>
+      <details>
+        <summary>¿Reemplazas a mi contador?</summary>
+        <div class="a">Si ya tienes contador, trabajamos juntos: él declara y cierra, y yo opero el día a día y le entrego todo ordenado para que pueda hacerlo bien. Si no tienes o quieres cambiarlo, la contabilidad la llevo yo y te ahorras tener dos interlocutores. También se puede contratar sola, sin plan mensual. En cualquiera de los casos se cotiza aparte: parte en 3 UF al mes y sube según el tamaño de tu empresa, el giro y el volumen de documentos.</div>
+      </details>
+      <details>
+        <summary>¿Tengo que hacer el diagnóstico para contratar solo la contabilidad?</summary>
+        <div class="a">No. El diagnóstico es para ordenar la administración; si lo que necesitas es contabilidad, basta con que revisemos tu situación en el SII y te paso el valor. Son dos entradas distintas y no estás obligado a pasar por las dos.</div>
+      </details>
+      <details>
+        <summary>¿Qué pasa si me paso del tope?</summary>
+        <div class="a">Los topes se miden mes a mes y quedan por escrito en la propuesta firmada. Si te pasas dos meses seguidos, el plan sube al tramo siguiente, con aviso durante el segundo mes. Creciste: ajustamos. Nada se cobra de sorpresa.</div>
+      </details>
+      <details>
+        <summary>¿Vas a tener acceso a mis cuentas bancarias?</summary>
+        <div class="a">Para preparar los pagos, sí. Pero la aprobación es siempre tuya: yo dejo la nómina lista y tú la apruebas o la firmas en el banco. Nunca se mueve un peso sin tu visto bueno, y cada pago queda registrado.</div>
+      </details>
+      <details>
+        <summary>¿Y si no quiero un plan mensual?</summary>
+        <div class="a">Hay varios caminos más. Puedo dejarte todo ordenado y andando en un proyecto cerrado y después seguir tú, o puedes quedarte con el Respaldo a 5 UF al mes, donde tu equipo ejecuta y yo reviso. También están los encargos puntuales, uno a uno. Y si lo único que necesitas es la contabilidad, se contrata sola desde 3 UF al mes.</div>
+      </details>
+      <details>
+        <summary>¿Cuánto se demora en partir?</summary>
+        <div class="a">El diagnóstico toma dos semanas para un negocio micro y tres para una pyme, contadas desde que recibo los antecedentes completos. Después de esa entrega, el plan mensual puede empezar el mes siguiente.</div>
+      </details>
+      <details>
+        <summary>¿Los valores incluyen IVA?</summary>
+        <div class="a">Emito factura. Los valores publicados son netos y se les suma el IVA, que tú recuperas como crédito fiscal si tu empresa es afecta.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band-deep" id="contacto">
+  <div class="wrap">
+    <p class="eyebrow">El siguiente paso</p>
+    <h2>Partamos por el diagnóstico</h2>
+    <p class="lede prose">En dos o tres semanas vas a tener claro qué está fallando, qué es urgente y cuánto cuesta resolverlo. Con eso en la mano, decides tú cuánto de la pega se va de tu escritorio.</p>
+    <p class="lede prose" style="margin-top:12px">¿Lo que necesitas es contador? Escríbeme igual: eso se cotiza sin pasar por el diagnóstico.</p>
+
+    <div class="contact-box">
+      <a class="btn" href="https://wa.me/56973327384" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
+      <span class="phone" id="fono">+56 9 7332 7384</span>
+      <button type="button" class="copy" id="copiar">Copiar número</button>
+    </div>
+    <p class="foot-note">También por correo: [TU CORREO AQUÍ]</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Tatiana Pérez Cáceres · Contabilidad y back-office financiero</span>
+    <span>Concepción, Chile · Trabajo con clientes de todo el país</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var botones = document.querySelectorAll('[data-linea]');
+  var paneles = document.querySelectorAll('[data-linea-panel]');
+  var nota = document.getElementById('switch-note');
+  var textos = {
+    empresas: 'Servicios, distribución, tecnología, contratistas: vendes a otras empresas y cobras con factura.',
+    comercio: 'Almacenes, restaurantes, peluquerías, tiendas, talleres: vendes a personas y cobras con boleta.'
+  };
+
+  function elegir(linea) {
+    botones.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.linea === linea));
+    });
+    paneles.forEach(function (p) {
+      p.hidden = p.dataset.lineaPanel !== linea;
+    });
+    if (nota && textos[linea]) nota.textContent = textos[linea];
+    try { localStorage.setItem('linea', linea); } catch (e) {}
+  }
+
+  botones.forEach(function (b) {
+    b.addEventListener('click', function () { elegir(b.dataset.linea); });
+  });
+
+  var guardada = null;
+  try { guardada = localStorage.getItem('linea'); } catch (e) {}
+  if (guardada === 'comercio') elegir('comercio');
+
+  var boton = document.getElementById('copiar');
+  var fono = document.getElementById('fono');
+  if (boton && fono) {
+    boton.addEventListener('click', function () {
+      var texto = fono.textContent.trim();
+      var listo = function () {
+        boton.textContent = 'Número copiado';
+        setTimeout(function () { boton.textContent = 'Copiar número'; }, 2200);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(texto).then(listo, seleccionar);
+      } else {
+        seleccionar();
+      }
+      function seleccionar() {
+        var r = document.createRange();
+        r.selectNodeContents(fono);
+        var s = window.getSelection();
+        s.removeAllRanges();
+        s.addRange(r);
+        boton.textContent = 'Selecciona y copia';
+        setTimeout(function () { boton.textContent = 'Copiar número'; }, 2600);
+      }
+    });
+  }
+})();
+</script>
+
+<script>
+/* Cotizador: aplica los topes de cada plan y los modificadores publicados. */
+(function () {
+  var UF = 40800;
+  var IVA = 0.19;
+
+  var PLANES = {
+    micro:    { nombre: 'Micro',    uf: 5,  fact: 10, trab: 1,  medios: 1 },
+    basico:   { nombre: 'Básico',   uf: 9,  fact: 20, trab: 3,  medios: 2 },
+    crece:    { nombre: 'Crece',    uf: 15, fact: 30, trab: 5,  medios: 3 },
+    integral: { nombre: 'Integral', uf: 24, fact: 40, trab: 10, medios: 4 }
+  };
+  var ORDEN = ['micro', 'basico', 'crece', 'integral'];
+  var DUO = 0.10;               // descuento si entran dos empresas juntas
+
+  var PAQUETE_FACTURAS = 1.5;   // por cada 10 facturas sobre el tope
+  var TRABAJADOR_EXTRA = 0.18;  // por trabajador sobre el tope
+  var MEDIO_EXTRA = 0.3;        // por medio de pago sobre el tope
+  var RAZON_EXTRA = 0.45;       // proporción del plan por razón social adicional
+
+  var $ = function (id) { return document.getElementById(id); };
+  var campoMedios = $('campo-medios');
+  var addonsVacio = $('addons-vacio');
+  var planManual = false;
+  var planOpts = Array.prototype.slice.call(document.querySelectorAll('#cot-planes .opt'));
+  var addonOpts = Array.prototype.slice.call(document.querySelectorAll('#cot-addons .opt'));
+  var duoOpt = document.querySelector('#cot-duo .opt');
+
+  function num(id, min, max) {
+    var v = parseInt(($(id) || {}).value, 10);
+    if (isNaN(v)) v = min;
+    return Math.min(max, Math.max(min, v));
+  }
+  function linea() {
+    var r = document.querySelector('input[name="cot-linea"]:checked');
+    return r ? r.value : 'empresas';
+  }
+  function planElegido() {
+    var r = document.querySelector('input[name="cot-plan"]:checked');
+    return r ? r.value : 'basico';
+  }
+  function fmtUf(n) {
+    var r = Math.round(n * 100) / 100;
+    return r.toString().replace('.', ',') + ' UF';
+  }
+  function fmtPesos(n) {
+    return '$' + Math.round(n).toLocaleString('es-CL');
+  }
+
+  function minimoPara(f, t, m, l) {
+    for (var i = 0; i < ORDEN.length; i++) {
+      var p = PLANES[ORDEN[i]];
+      if (f <= p.fact && t <= p.trab && (l !== 'comercio' || m <= p.medios)) return ORDEN[i];
+    }
+    return 'integral';
+  }
+
+  function calcular() {
+    var l = linea();
+    var trab = num('cot-trab', 0, 60);
+    var fact = num('cot-fact', 0, 300);
+    var razones = num('cot-razones', 1, 6);
+    var medios = num('cot-medios', 1, 12);
+
+    campoMedios.hidden = (l !== 'comercio');
+
+    var visibles = 0;
+    addonOpts.forEach(function (o) {
+      var ok = (o.dataset.linea === l || o.dataset.linea === 'ambas');
+      o.hidden = !ok;
+      if (ok) visibles++;
+      else o.querySelector('input').checked = false;
+    });
+    addonsVacio.hidden = visibles > 0;
+
+    // El tamaño define el plan recomendado. Puedes quedarte en uno menor
+    // pagando los extras, con la regla de los dos meses a la vista.
+    var minimo = minimoPara(fact, trab, medios, l);
+    var iMin = ORDEN.indexOf(minimo);
+    if (!planManual) {
+      var radio = $('cot-p-' + minimo);
+      if (radio) radio.checked = true;
+    }
+    var elegido = planElegido();
+    var bajoElTope = ORDEN.indexOf(elegido) < iMin;
+
+    planOpts.forEach(function (o) {
+      var input = o.querySelector('input');
+      var i = ORDEN.indexOf(input.value);
+      o.classList.toggle('sel', input.checked);
+      var why = o.querySelector('.why');
+      if (i < iMin) {
+        why.textContent = 'Tu operación queda sobre el tope de este plan: se puede, pagando los extras.';
+      } else if (i === iMin) {
+        why.textContent = 'Recomendado: cubre tu tamaño sin pagar extras. ' + why.dataset.whyText;
+      } else {
+        why.textContent = why.dataset.whyText;
+      }
+    });
+    addonOpts.forEach(function (o) {
+      o.classList.toggle('sel', o.querySelector('input').checked);
+    });
+    document.querySelectorAll('input[name="cot-linea"]').forEach(function (r) {
+      r.closest('.opt').classList.toggle('sel', r.checked);
+    });
+
+    var plan = PLANES[elegido];
+    var lineas = [];
+    var total = plan.uf;
+    lineas.push({ t: 'Plan ' + plan.nombre, v: fmtUf(plan.uf) });
+
+    var sobreFact = Math.max(0, fact - plan.fact);
+    if (sobreFact > 0) {
+      var paquetes = Math.ceil(sobreFact / 10);
+      var vf = paquetes * PAQUETE_FACTURAS;
+      total += vf;
+      lineas.push({ t: paquetes + (paquetes === 1 ? ' paquete' : ' paquetes') + ' de facturas extra', v: fmtUf(vf) });
+    }
+
+    var sobreTrab = Math.max(0, trab - plan.trab);
+    if (sobreTrab > 0) {
+      var vt = sobreTrab * TRABAJADOR_EXTRA;
+      total += vt;
+      lineas.push({ t: sobreTrab + (sobreTrab === 1 ? ' trabajador' : ' trabajadores') + ' sobre el tope', v: fmtUf(vt) });
+    }
+
+    if (l === 'comercio') {
+      var sobreMedios = Math.max(0, medios - plan.medios);
+      if (sobreMedios > 0) {
+        var vm = sobreMedios * MEDIO_EXTRA;
+        total += vm;
+        lineas.push({ t: sobreMedios + (sobreMedios === 1 ? ' medio de pago extra' : ' medios de pago extra'), v: fmtUf(vm) });
+      }
+    }
+
+    var extraRazones = razones - 1;
+    if (extraRazones > 0) {
+      var vr = extraRazones * RAZON_EXTRA * plan.uf;
+      total += vr;
+      lineas.push({ t: extraRazones + (extraRazones === 1 ? ' razón social adicional' : ' razones sociales adicionales'), v: fmtUf(vr) });
+    }
+
+    addonOpts.forEach(function (o) {
+      var input = o.querySelector('input');
+      if (!o.hidden && input.checked) {
+        if (input.dataset.nota) {
+          lineas.push({ t: input.dataset.nombre, v: input.dataset.nota });
+        } else {
+          var v = parseFloat(input.dataset.uf);
+          total += v;
+          lineas.push({ t: input.dataset.nombre, v: fmtUf(v) });
+        }
+      }
+    });
+
+    var duo = $('cot-duo-si');
+    duoOpt.classList.toggle('sel', duo.checked);
+    if (duo.checked) {
+      var vd = Math.round(total * DUO * 100) / 100;
+      total -= vd;
+      lineas.push({ t: 'Descuento por entrar con otra empresa', v: '− ' + fmtUf(vd) });
+    }
+
+    $('r-plan').textContent = 'Plan ' + plan.nombre;
+    $('r-lines').innerHTML = lineas.map(function (x) {
+      return '<div class="line"><span></span><b></b></div>';
+    }).join('');
+    var filas = $('r-lines').querySelectorAll('.line');
+    lineas.forEach(function (x, i) {
+      filas[i].querySelector('span').textContent = x.t;
+      filas[i].querySelector('b').textContent = x.v;
+    });
+
+    $('r-total').textContent = fmtUf(total);
+    var neto = total * UF;
+    var conIva = neto * (1 + IVA);
+    $('r-pesos').textContent = 'al mes · ≈ ' + fmtPesos(neto) + ' netos · factura por ' + fmtPesos(conIva) + ' con IVA';
+
+    var diag;
+    if (razones > 1 || trab > 10) diag = null;
+    else if (trab <= 3) diag = 4;
+    else diag = 6;
+    $('r-diag').innerHTML = diag
+      ? '<b>Diagnóstico inicial: ' + fmtUf(diag) + '</b>, pago único. Se descuenta completo si contratas dentro de 60 días.'
+      : '<b>Diagnóstico inicial: se cotiza.</b> Con más de una razón social o más de 10 trabajadores, lo definimos en la primera conversación.';
+
+    var aviso = $('r-aviso');
+    if (trab > 20 || fact > 80) {
+      aviso.hidden = false;
+      aviso.textContent = 'Tu operación se sale de los tramos habituales. Esta estimación sirve de referencia, pero conviene cotizarla a medida.';
+    } else if (bajoElTope) {
+      aviso.hidden = false;
+      aviso.textContent = 'Quedas sobre el tope del plan ' + plan.nombre + '. Se puede, pagando los extras, pero si se mantiene dos meses seguidos corresponde subir al plan ' + PLANES[minimo].nombre + '.';
+    } else {
+      aviso.hidden = true;
+    }
+  }
+
+  document.querySelectorAll('.why[data-why]').forEach(function (w) {
+    w.dataset.whyText = w.textContent;
+  });
+  document.querySelectorAll('input[name="cot-plan"]').forEach(function (r) {
+    var marcar = function () { planManual = true; };
+    r.addEventListener('input', marcar);
+    r.addEventListener('change', marcar);
+  });
+  document.querySelectorAll('#cotizador input').forEach(function (el) {
+    el.addEventListener('input', calcular);
+    el.addEventListener('change', calcular);
+  });
+  calcular();
+})();
+</script>
+
+</body></html>
