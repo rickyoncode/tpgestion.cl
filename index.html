@@ -1,10 +1,26 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Contabilidad, administración financiera y back-office para pymes y negocios en Chile. Tatiana Pérez Cáceres, contador auditor e ingeniero comercial.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Tatiana Pérez Cáceres · Contabilidad y back-office">
+<meta property="og:description" content="No te vendo horas. Te vendo que esto deje de ser tu problema.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%2316233A%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Georgia,serif%27 font-size=%2716%27 font-weight=%27700%27 fill=%27%23FF5A3C%27 text-anchor=%27middle%27%3ET%3C/text%3E%3C/svg%3E">
 <title>Tatiana Pérez Cáceres</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap">
 
+<style>
+/* reset mínimo: en el artifact lo ponía la plataforma */
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font: 14px system-ui, sans-serif; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
 <style>
 /* Layout: una columna, bandas alternadas de azul tinta / blanco / niebla.
    El coral aparece una vez por banda: el botón o el dato que importa. */
@@ -413,6 +429,7 @@ section > .wrap { padding-block: clamp(56px, 8vw, 96px); }
   background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
   border-radius: var(--r); padding: 10px 18px;
 }
+.phone.mail { font-family: var(--sans); font-size: var(--s4); font-weight: 600; }
 .copy { font: inherit; font-size: var(--s2); font-weight: 600; cursor: pointer;
   background: transparent; color: var(--on-deep-m); border: 1px solid rgba(255,255,255,.3);
   border-radius: var(--r); padding: 10px 16px; }
@@ -485,6 +502,8 @@ footer .wrap { padding-block: 26px; display: flex; flex-wrap: wrap; gap: 10px 26
   * { animation: none !important; transition: none !important; }
 }
 </style>
+</head>
+<body>
 
 <header class="nav">
   <div class="wrap">
@@ -1161,18 +1180,25 @@ footer .wrap { padding-block: 26px; display: flex; flex-wrap: wrap; gap: 10px 26
     <p class="lede prose">En dos o tres semanas vas a tener claro qué está fallando, qué es urgente y cuánto cuesta resolverlo. Con eso en la mano, decides tú cuánto de la pega se va de tu escritorio.</p>
     <p class="lede prose" style="margin-top:12px">¿Lo que necesitas es contador? Escríbeme igual: eso se cotiza sin pasar por el diagnóstico.</p>
 
-    <div class="contact-box">
+    <div class="hero-actions">
       <a class="btn" href="https://wa.me/56973327384" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
+      <a class="btn btn-ghost" href="https://calendar.app.google/7xqzHYcyghBzFc1t5" target="_blank" rel="noopener">Agenda una hora en mi calendario</a>
+    </div>
+
+    <div class="contact-box">
       <span class="phone" id="fono">+56 9 7332 7384</span>
       <button type="button" class="copy" id="copiar">Copiar número</button>
+      <span class="phone mail" id="mail">tatiana@tpgestion.cl</span>
+      <button type="button" class="copy" id="copiar-mail">Copiar correo</button>
     </div>
-    <p class="foot-note">También por correo: [TU CORREO AQUÍ]</p>
+    <p class="foot-note">Si prefieres agendar directo, el calendario muestra solo las horas que tengo libres.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <span>Tatiana Pérez Cáceres · Contabilidad y back-office financiero</span>
+    <span>tatiana@tpgestion.cl</span>
     <span>Concepción, Chile · Trabajo con clientes de todo el país</span>
   </div>
 </footer>
@@ -1206,31 +1232,33 @@ footer .wrap { padding-block: 26px; display: flex; flex-wrap: wrap; gap: 10px 26
   try { guardada = localStorage.getItem('linea'); } catch (e) {}
   if (guardada === 'comercio') elegir('comercio');
 
-  var boton = document.getElementById('copiar');
-  var fono = document.getElementById('fono');
-  if (boton && fono) {
+  function copiador(idBoton, idDato, etiqueta) {
+    var boton = document.getElementById(idBoton);
+    var dato = document.getElementById(idDato);
+    if (!boton || !dato) return;
+    var base = 'Copiar ' + etiqueta.toLowerCase();
     boton.addEventListener('click', function () {
-      var texto = fono.textContent.trim();
+      function seleccionar() {
+        var r = document.createRange();
+        r.selectNodeContents(dato);
+        var sel = window.getSelection();
+        sel.removeAllRanges(); sel.addRange(r);
+        boton.textContent = 'Selecciona y copia';
+        setTimeout(function () { boton.textContent = base; }, 2600);
+      }
       var listo = function () {
-        boton.textContent = 'Número copiado';
-        setTimeout(function () { boton.textContent = 'Copiar número'; }, 2200);
+        boton.textContent = etiqueta + ' copiado';
+        setTimeout(function () { boton.textContent = base; }, 2200);
       };
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(texto).then(listo, seleccionar);
+        navigator.clipboard.writeText(dato.textContent.trim()).then(listo, seleccionar);
       } else {
         seleccionar();
       }
-      function seleccionar() {
-        var r = document.createRange();
-        r.selectNodeContents(fono);
-        var s = window.getSelection();
-        s.removeAllRanges();
-        s.addRange(r);
-        boton.textContent = 'Selecciona y copia';
-        setTimeout(function () { boton.textContent = 'Copiar número'; }, 2600);
-      }
     });
   }
+  copiador('copiar', 'fono', 'Número');
+  copiador('copiar-mail', 'mail', 'Correo');
 })();
 </script>
 
@@ -1448,4 +1476,5 @@ footer .wrap { padding-block: 26px; display: flex; flex-wrap: wrap; gap: 10px 26
 })();
 </script>
 
-</body></html>
+</body>
+</html>
